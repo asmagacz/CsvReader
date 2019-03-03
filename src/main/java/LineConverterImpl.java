@@ -10,7 +10,11 @@ class LineConverterImpl implements LineConverter {
         for (String line : lines) {
             teams = line.split(splitBy);
             //System.out.println(line);
-            teamsList.add(new Team(Integer.parseInt(teams[0]), teams[1], Integer.parseInt(teams[2]), Integer.parseInt(teams[3]), Integer.parseInt(teams[4]), Integer.parseInt(teams[5])));
+            teamsList.add(new Team(Integer.parseInt(teams[0]), teams[1],
+                    Integer.parseInt(teams[2].replaceAll(" ", "")),
+                    Integer.parseInt(teams[3].replaceAll(" ", "")),
+                    Integer.parseInt(teams[4].replaceAll(" ", "")),
+                    Integer.parseInt(teams[5].replaceAll(" ", ""))));
         }
         // }
         return teamsList;
