@@ -14,6 +14,18 @@ class Team {
     private int loses;
     private int draws;
 
+    @Override
+    public String toString() {
+        return "Team{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", points=" + points +
+                ", wins=" + wins +
+                ", loses=" + loses +
+                ", draws=" + draws +
+                '}';
+    }
+
     public Team(int id, String name, int points, int wins, int loses, int draws) {
         this.id = id;
         this.name = name;

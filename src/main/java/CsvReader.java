@@ -40,6 +40,7 @@ class CsvReader implements CsvReport {
             }
         }
         //System.out.println(stringsLine+"\n");
+        stringsLine.remove(0);
         return stringsLine;
     }
 // klasa CsvReader powinna implementowac interfejs CsvReport

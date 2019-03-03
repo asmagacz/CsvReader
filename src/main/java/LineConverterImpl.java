@@ -3,15 +3,16 @@ import java.util.List;
 
 class LineConverterImpl implements LineConverter {
 
-    public List<Team> toTeam(List<String> lines, String splitBy){
-        String[] teams;
+    public List<Team> toTeam(List<String> lines, String splitBy) {
+        String[] teams = null;
         List<Team> teamsList = new ArrayList();
-        for(String line : lines){
-
-            for(int index = 0; index < line.length(); index++ ){
-                teamsList.add(new Team(line.indexOf(index),String.valueOf(line.indexOf(index+1)),line.indexOf(index+2),line.indexOf(index+3),line.indexOf(index+4),line.indexOf(index+5)));
-            }
+        //  for(int index = 0; index < lines.size(); index++ ){
+        for (String line : lines) {
+            teams = line.split(splitBy);
+            //System.out.println(line);
+            teamsList.add(new Team(Integer.parseInt(teams[0]), teams[1], Integer.parseInt(teams[2]), Integer.parseInt(teams[3]), Integer.parseInt(teams[4]), Integer.parseInt(teams[5])));
         }
+        // }
         return teamsList;
     }
 // klasa LineConverterImpl powinna implementowac interfejs LineConverter
